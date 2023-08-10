@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> AutoMWM by Nupur Mirani</title>
+<style>
+*{font-size:60px;}
+h1{background-color:Black;color:White; border radius:25%; width:50%;}
+body{background-color:#adafba;}
+
+</style>
+
+</head>
+<body>
+
+<center>
+<h1>Motivational Message App</h1>
+<h1 id="ans"></h1>
+<script>
+function getmsg()
+{
+
+let ans=document.getElementById("ans");
+let url="https://api.quotable.io/random";
+fetch(url)
+.then (res => res.json())
+.then (data => ans.innerHTML = data.content+ " "+ data.author)
+.catch(err => ans.innerHTML= "issue"+ err);
+
+}
+getmsg();
+setInterval(getmsg,10000);
+</script>
+
+</center>
+
+</body>
+</html>
